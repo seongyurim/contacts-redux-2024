@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/contacts-redux-2024/static/css/main.b2ae27d7.css",
-    "main.js": "/contacts-redux-2024/static/js/main.f872c1af.js",
+    "main.css": "/contacts-redux-2024/static/css/main.6d560a8e.css",
+    "main.js": "/contacts-redux-2024/static/js/main.2d9609a1.js",
     "static/js/453.dd50ab9b.chunk.js": "/contacts-redux-2024/static/js/453.dd50ab9b.chunk.js",
     "index.html": "/contacts-redux-2024/index.html",
-    "main.b2ae27d7.css.map": "/contacts-redux-2024/static/css/main.b2ae27d7.css.map",
-    "main.f872c1af.js.map": "/contacts-redux-2024/static/js/main.f872c1af.js.map",
+    "main.6d560a8e.css.map": "/contacts-redux-2024/static/css/main.6d560a8e.css.map",
+    "main.2d9609a1.js.map": "/contacts-redux-2024/static/js/main.2d9609a1.js.map",
     "453.dd50ab9b.chunk.js.map": "/contacts-redux-2024/static/js/453.dd50ab9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2ae27d7.css",
-    "static/js/main.f872c1af.js"
+    "static/css/main.6d560a8e.css",
+    "static/js/main.2d9609a1.js"
   ]
 }
