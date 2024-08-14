@@ -24,7 +24,9 @@ const ContactItem = ({item}) => {
         <div className="info-memo">{item.memo}</div>
       </div>
       <div className="delete-area">
-        <button className="delete-btn" onClick={deleteList}>✕</button>
+        <button className="delete-btn" onClick={deleteList}>
+          <span>✕</span>
+          </button>
       </div>
 
     </div>

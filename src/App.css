@@ -98,10 +98,16 @@ input:focus {
   cursor: pointer;
   width: 30px;
   height: 30px;
-  text-align: center;
-  color: #fff;
   background-color: #000;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-file-btn span {
+  color: #fff;
+  font-size: 1rem;
 }
 
 .input-file-btn:hover {
@@ -109,6 +115,7 @@ input:focus {
 }
 
 .forms {
+  height: auto;
   position: relative;
   padding: 1rem .75rem;
   border-radius: inherit;
@@ -280,12 +287,18 @@ input:focus {
 }
 
 .delete-btn {
-  color: #fff;
   background-color: #000;
   font-size: .8rem;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn span {
+  color: #fff;
 }
 
 .delete-btn:hover {

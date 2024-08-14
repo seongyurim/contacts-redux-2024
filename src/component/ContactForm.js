@@ -75,7 +75,9 @@ const ContactForm = () => {
           <div className="img-wrapper">
             <label htmlFor="input-file">
             <img src={profileImg} alt="Profile Image" className="form-img"/>
-            <div className="input-file-btn">+</div>
+            <div className="input-file-btn">
+              <span>+</span>
+            </div>
             </label>
             <input type="file" onChange={uploadProfileImg} className="input-file" id="input-file"/>
           </div>
