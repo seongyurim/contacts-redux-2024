@@ -115,14 +115,21 @@ input:focus {
 }
 
 .forms {
-  height: auto;
+  height: 58px;
   position: relative;
   padding: 1rem .75rem;
   border-radius: inherit;
   background-color: yellowgreen;
 }
 
+.forms::before,
+.forms::after {
+  height: 100%;
+  box-sizing: border-box; /* border & padding 포함 */
+}
+
 .forms input {
+  line-height: 1.5;
   background-color: red;
 }
 
