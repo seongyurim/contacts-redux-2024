@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faL, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 const SearchBox = () => {
 
@@ -16,12 +15,12 @@ const SearchBox = () => {
   const searchByName = (event) => {
     event.preventDefault(); // 리로드 막기
 
-    // 1. 검색어가 없는 경우
+    // 검색어가 없는 경우
     if (keyword === "") {
       setNoKeyword(true);
       setNoMatched(false);
     }
-    else {
+    else { // 검색어가 있는 경우
       setNoKeyword(false);
       dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
     }
@@ -36,9 +35,10 @@ const SearchBox = () => {
         setNoMatched(false);
       }
     } else {
-      setNoMatched(false); // 검색어가 없을 때는 매칭 상태를 확인할 필요 없음
+      // 검색어가 없을 때는 매칭 상태를 확인할 필요가 없음
+      setNoMatched(false);
     }
-  }, [filteredList, keyword]);
+  }, [filteredList]);
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
@@ -61,8 +61,8 @@ const SearchBox = () => {
         <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" onClick={searchByName} />
       </div>
       <div className="msgs">
-        {noKeyword && (<div className="msg-desc">키워드가 입력되지 않았습니다.</div>)}
-        {noMatched && (<div className="msg-desc">검색 결과가 없습니다.</div>)}
+        {noKeyword && (<div className="search-msg">키워드가 입력되지 않았습니다.</div>)}
+        {noMatched && (<div className="search-msg">검색 결과가 없습니다.</div>)}
       </div>
     </div>
   )

@@ -65,6 +65,7 @@ input {
 
 input:focus {
   outline: none;
+  box-sizing: border-box;
 }
 
 .contact-form-container .img-area {
@@ -119,38 +120,39 @@ input:focus {
   position: relative;
   padding: 1rem .75rem;
   border-radius: inherit;
-  background-color: yellowgreen;
-}
-
-.forms::before,
-.forms::after {
-  height: 100%;
-  box-sizing: border-box; /* border & padding 포함 */
+  background-color: #fff;
+  border: 1.5px solid transparent;
+  box-sizing: border-box;
 }
 
 .forms input {
-  line-height: 1.5;
-  background-color: red;
+  box-sizing: border-box;
+  /* background-color: yellow; */
 }
 
 .form-name {
   border-radius: .375rem .375rem 0 0;
-  margin-bottom: -1px;
+  margin-bottom: -4px;
 }
 
 .form-memo {
   border-radius: 0 0 .375rem .375rem;
-  margin: -1px 0 1rem 0;
+  margin: -4px 0 1rem 0;
 }
 
 .forms.focus {
-  z-index: 10;
-  box-shadow: none;
-  border: 1.5px solid #000;
-  background-color: inherit !important;
+  z-index: 30;
+  border-color: #000;
+  box-sizing: border-box;
+  /* background-color: inherit !important; */
+}
+
+.forms.focus::after {
+  border: none;
 }
 
 .forms::before {
+  height: 100%;
   margin: 0 10px 0 10px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -170,6 +172,7 @@ input:focus {
 }
 
 .forms::after {
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
@@ -233,12 +236,24 @@ input:focus {
 /********** SearchBox **********/
 
 .search-form {
-  border: 1px solid #dfdfdf;
+  border: 1.5px solid transparent;
   border-radius: .375rem !important;
-  position: relative;
-  border-radius: inherit;
   padding: 1rem .75rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
+  position: relative;
+  background-color: #fff;
+}
+
+.search-form::after {
+  border-radius: inherit;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 1px solid #dfdfdf;
+  content: '';
 }
 
 .search-icon {
@@ -250,21 +265,29 @@ input:focus {
 }
 
 .search-form.focus {
-  border: 1.5px solid #000;
+  border-color: #000;
+  background-color: #fff;
+  z-index: 30;
 }
 
+.search-form.focus::after {
+  border: none;
+}
 
-
-/********** SearchBox **********/
-
-.total-count {
-  text-align: center;
-  margin: 1.5rem 0;
+.search-msg {
+  font-size: .8rem;
+  color: #888;
+  padding-left: 13px;
 }
 
 
 
 /********** ContactItem **********/
+
+.total-count {
+  text-align: center;
+  margin: 1.5rem 0;
+}
 
 .contact-item-container {
   display: flex;
