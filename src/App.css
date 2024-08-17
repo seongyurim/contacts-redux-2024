@@ -115,61 +115,74 @@ input:focus {
   background-color: #424649;
 }
 
+.form-list {
+  position: relative;
+  border-radius: .375rem;
+}
+
+.form-list::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 1px solid #dfdfdf;
+  pointer-events: none;
+  content: '';
+}
+
 .forms {
   height: 58px;
   position: relative;
   padding: 1rem .75rem;
-  border-radius: inherit;
   background-color: #fff;
-  border: 1.5px solid transparent;
   box-sizing: border-box;
+}
+
+.forms+.forms {
+  margin-top: -1px;
 }
 
 .forms input {
   box-sizing: border-box;
-  /* background-color: yellow; */
 }
 
 .form-name {
   border-radius: .375rem .375rem 0 0;
-  margin-bottom: -4px;
 }
 
 .form-memo {
   border-radius: 0 0 .375rem .375rem;
-  margin: -4px 0 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.forms.focus,
+.forms.error {
+  z-index: 100;
+  margin-top: -2px;
 }
 
 .forms.focus {
   z-index: 30;
-  border-color: #000;
   box-sizing: border-box;
-  /* background-color: inherit !important; */
 }
 
 .forms.focus::after {
-  border: none;
+  border: 1.5px solid #000;
 }
 
 .forms::before {
   height: 100%;
-  margin: 0 10px 0 10px;
+  padding: 0 10px 0 10px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #000;
 }
 
-.forms:nth-of-type(2)::before {
-  content: "\f007";
-}
-
-.forms:nth-of-type(3)::before {
-  content: "\f095";
-}
-
-.forms:nth-of-type(4)::before {
-  content: "\f10d";
-}
+.forms:nth-of-type(1)::before { content: "\f007"; }
+.forms:nth-of-type(2)::before { content: "\f095"; }
+.forms:nth-of-type(3)::before { content: "\f10d"; }
 
 .forms::after {
   height: 100%;
@@ -178,11 +191,10 @@ input:focus {
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: inherit;
   border: 1px solid #dfdfdf;
   pointer-events: none;
-  z-index: 1;
   content: '';
-  border-radius: inherit;
 }
 
 /* icon */

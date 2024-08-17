@@ -83,39 +83,41 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <div className={`forms form-name ${showNameMsg ? "error" : (focusedField === "name" ? "focus" : "")} `}>
-          <input
-            type="text"
-            placeholder="이름"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            onFocus={() => setFocusedField("name")}
-            onBlur={() => setFocusedField("")}
-          />
-        </div>
+        <div className="form-list">
+          <div className={`forms form-name ${showNameMsg ? "error" : (focusedField === "name" ? "focus" : "")} `}>
+            <input
+              type="text"
+              placeholder="이름"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              onFocus={() => setFocusedField("name")}
+              onBlur={() => setFocusedField("")}
+            />
+          </div>
 
-        <div className={`forms form-phone-number ${showPhoneMsg ? "error" : (focusedField === "phone" ? "focus" : "")}`}>
-          <input
-            type="tel"
-            placeholder="휴대전화번호"
-            maxLength="13"
-            onInput={autoHyphen}
-            value={phoneNumber}
-            onChange={(event) => setPhoneNumber(event.target.value)}
-            onFocus={() => setFocusedField("phone")}
-            onBlur={() => setFocusedField("")}
-          />
-        </div>
+          <div className={`forms form-phone-number ${showPhoneMsg ? "error" : (focusedField === "phone" ? "focus" : "")}`}>
+            <input
+              type="tel"
+              placeholder="휴대전화번호"
+              maxLength="13"
+              onInput={autoHyphen}
+              value={phoneNumber}
+              onChange={(event) => setPhoneNumber(event.target.value)}
+              onFocus={() => setFocusedField("phone")}
+              onBlur={() => setFocusedField("")}
+            />
+          </div>
 
-        <div className={`forms form-memo ${focusedField === "memo" ? "focus" : ""}`}>
-          <input
-            type="text"
-            placeholder="[선택] 메모"
-            value={memo}
-            onChange={(event) => setMemo(event.target.value)}
-            onFocus={() => setFocusedField("memo")}
-            onBlur={() => setFocusedField("")}
-          />
+          <div className={`forms form-memo ${focusedField === "memo" ? "focus" : ""}`}>
+            <input
+              type="text"
+              placeholder="[선택] 메모"
+              value={memo}
+              onChange={(event) => setMemo(event.target.value)}
+              onFocus={() => setFocusedField("memo")}
+              onBlur={() => setFocusedField("")}
+            />
+          </div>
         </div>
 
         <div className="msgs">
