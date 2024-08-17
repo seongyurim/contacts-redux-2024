@@ -57,7 +57,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 input {
-  width: calc(100% - 50px);
   border: none;
   cursor: pointer;
   background-color: transparent;
@@ -142,7 +141,7 @@ input:focus {
   align-items: center;
 }
 
-.forms+.forms {
+.forms + .forms {
   margin-top: -1px;
 }
 
@@ -172,7 +171,7 @@ input:focus {
 }
 
 .forms.focus::after {
-  border: 1.5px solid #000;
+  border: 2px solid #000;
 }
 
 .forms::before {
@@ -214,7 +213,7 @@ input:focus {
 
 /* border */
 .forms.error::after {
-  border: 1.5px solid #ff3f3f;
+  border: 2px solid #ff3f3f;
   border-radius: inherit;
   z-index: 40;
 }
@@ -259,7 +258,7 @@ input:focus {
 /********** SearchBox **********/
 
 .search-form {
-  border: 1.5px solid transparent;
+  border: 2px solid transparent;
   border-radius: .375rem !important;
   padding: 1rem 1.2rem;
   margin-bottom: .5rem;
@@ -318,7 +317,11 @@ input:focus {
 .contact-item-container {
   display: flex;
   align-items: center;
-  margin: 1.5rem 0;
+  padding: 1.3rem 0;
+}
+
+.contact-item-container + .contact-item-container {
+  border-top: 1px solid #dfdfdf;
 }
 
 .contact-item-container .img-area {
