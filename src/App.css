@@ -119,6 +119,11 @@ input:focus {
   position: relative;
   padding: 1rem .75rem;
   border-radius: inherit;
+  background-color: yellowgreen;
+}
+
+.forms input {
+  background-color: red;
 }
 
 .form-name {
