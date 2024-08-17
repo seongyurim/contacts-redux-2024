@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBox = () => {
 
@@ -9,7 +9,7 @@ const SearchBox = () => {
   const [focusedField, setFocusedField] = useState(false);
   const [noKeyword, setNoKeyword] = useState(false); // 검색어가 없는 경우
   const [noMatched, setNoMatched] = useState(false); // 검색어가 매칭되지 않는 경우
-  const { contactList, filteredList } = useSelector(state => state);
+  const { filteredList } = useSelector(state => state);
   let dispatch = useDispatch();
 
   const searchByName = (event) => {
@@ -35,11 +35,12 @@ const SearchBox = () => {
         setNoMatched(false);
       }
     } else {
-      // 검색어가 없을 때는 매칭 상태를 확인할 필요가 없음
+      // 검색어가 없을 때에는 매칭 상태를 확인할 필요가 없음
       setNoMatched(false);
     }
   }, [filteredList]);
 
+  // 엔터를 눌러도 검색(필터링)이 되게 하기
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       searchByName(event);
@@ -60,7 +61,7 @@ const SearchBox = () => {
         />
         <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" onClick={searchByName} />
       </div>
-      <div className="msgs">
+      <div>
         {noKeyword && (<div className="search-msg">키워드가 입력되지 않았습니다.</div>)}
         {noMatched && (<div className="search-msg">검색 결과가 없습니다.</div>)}
       </div>

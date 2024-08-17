@@ -16,10 +16,9 @@ const ContactForm = () => {
   const [showPhoneMsg, setShowPhoneMsg] = useState(false);
 
   const addContact = (event) => {
-    
     event.preventDefault(); // 리로드 막기
     const id = new Date().getTime(); // 타임스탬프로 고유 ID 생성
-    let valid = true;
+    let valid = true; // 폼의 유효성 검사
 
     if (name === "") {
       setShowNameMsg(true);
@@ -37,19 +36,22 @@ const ContactForm = () => {
       setShowPhoneMsg(false);
     }
 
+    // 이름이나 휴대전화번호를 입력하지 않으면 리턴
     if (!valid) {
       return;
     }
 
+    // 데이터 전송
     dispatch({type:"ADD_CONTACT", payload:{id, name, phoneNumber, memo, profileImg}});
 
-    // 데이터 초기화
+    // 디스피치 후 데이터 초기화
     setName("");
     setPhoneNumber("");
     setMemo("");
     setProfileImg(profileDefault);
   }
 
+  // 프로필사진 첨부
   const uploadProfileImg = (event) => {
     const { files } = event.target;
     const uploadFile = files[0]; // files 배열의 첫번째 파일 사용
@@ -60,6 +62,7 @@ const ContactForm = () => {
     }
   }
 
+  // 휴대전화번호에 하이픈 자동 삽입
   const autoHyphen = (event) => {
     const target = event.target;
     target.value = target.value
@@ -126,7 +129,7 @@ const ContactForm = () => {
         </div>
         
         <Button variant="dark" type="submit" className="btn-add">
-          <strong>연락처에 추가</strong>
+          연락처에 추가
         </Button>
       </Form>
     </div>

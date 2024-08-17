@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 const ContactItem = ({item}) => {
 
   const dispatch = useDispatch();
+  
   const deleteList = () => {
     if (window.confirm("정말 삭제하시겠어요?")) {
       dispatch({type:"DELETE_CONTACT", payload:{id:item.id}});

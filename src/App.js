@@ -1,10 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ContactForm from './component/ContactForm';
 import ContactList from './component/ContactList';
 import titleIcon from './asset/contacts.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
   return (
