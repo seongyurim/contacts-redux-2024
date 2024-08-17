@@ -135,9 +135,11 @@ input:focus {
 .forms {
   height: 58px;
   position: relative;
-  padding: 1rem .75rem;
+  padding: 1rem 1rem 1rem 45px;
   background-color: #fff;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 .forms+.forms {
@@ -145,6 +147,7 @@ input:focus {
 }
 
 .forms input {
+  flex: 1; /* 입력 필드가 가용 공간을 채우도록 */
   box-sizing: border-box;
 }
 
@@ -178,6 +181,13 @@ input:focus {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .forms:nth-of-type(1)::before { content: "\f007"; }
@@ -250,10 +260,13 @@ input:focus {
 .search-form {
   border: 1.5px solid transparent;
   border-radius: .375rem !important;
-  padding: 1rem .75rem;
+  padding: 1rem 1.2rem;
   margin-bottom: .5rem;
   position: relative;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .search-form::after {
@@ -270,10 +283,10 @@ input:focus {
 
 .search-icon {
   cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+}
+
+.search-form input {
+  flex: 1;
 }
 
 .search-form.focus {
