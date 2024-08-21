@@ -10,7 +10,7 @@ const ContactList = () => {
     <div>
       <SearchBox />
       <div className="total-count">현재 연락처에는 <strong>{filteredList.length}</strong>건이 있습니다.</div>
-      {filteredList.map((item, index) => <ContactItem item={item} key={index}/>)}
+      {filteredList.map((item, idx) => <ContactItem item={item} key={idx}/>)}
     </div>
   )
 };
