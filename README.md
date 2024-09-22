@@ -18,9 +18,7 @@
 ## 📍주요기능
 
 ## 📍리덕스(Redux)
-<div align="center">
-  <img src="https://yamoo9.github.io/react-master/images/why-using-redux.jpg" alt="리덕스 컨셉" width="500px">
-</div>
+![리덕스](https://yamoo9.github.io/react-master/images/why-using-redux.jpg)
 
 ## 📍상세기능
 ### 1) 제목
