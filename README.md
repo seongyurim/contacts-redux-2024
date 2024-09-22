@@ -18,7 +18,8 @@
 ## 📍주요기능
 
 ## 📍리덕스(Redux)
-![image](https://github.com/user-attachments/assets/0e731eb3-5749-4b29-b356-93a13dc0b2ab)
+![Redux](https://github.com/user-attachments/assets/a1575b95-084f-4431-a12e-7c0a7bf7c147)
+
 
 ## 📍상세기능
 ### 1) 제목
