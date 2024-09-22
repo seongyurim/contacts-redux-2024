@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1ce09567-f3f6-4e93-856f-66ce9343ec43)![Header](https://capsule-render.vercel.app/api?type=rect&color=06402b&text=Contacts&desc=연락처%20정보를%20관리하는%20전화번호부%20앱%20미니%20프로젝트&section=header&height=250&fontColor=ffffff&fontSize=60&fontAlignY=45&descAlignY=67&descSize=30)
+![Header](https://capsule-render.vercel.app/api?type=rect&color=06402b&text=Contacts&desc=연락처%20정보를%20관리하는%20전화번호부%20앱%20미니%20프로젝트&section=header&height=250&fontColor=ffffff&fontSize=60&fontAlignY=45&descAlignY=67&descSize=30)
 <br><br>
 
 ## 📍프로젝트 소개
