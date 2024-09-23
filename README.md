@@ -85,3 +85,4 @@ dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
 - 단, 컴포넌트에서 상태를 직접적으로 요청할 수는 없습니다.
 ![Redux2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdKSDm4%2FbtsI06pfbTM%2FlwpYgCs0ahOavdCQkMVDy0%2Fimg.png)
 - `dispatch`로 `action`을 `reducer`에 보내고 함수가 호출된 이후 `store`에 상태가 저장되면 그 상태를 컴포넌트에 useSelector를 통해 가져오는 과정을 거쳐야 합니다.
+- 리덕스는 상태 관리의 일관성을 유지하고, 복잡한 컴포넌트 간의 데이터를 효율적으로 공유할 수 있도록 도와줍니다.
