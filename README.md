@@ -25,9 +25,15 @@
 
 ## 📍상세기능
 ### 1) 연락처 추가
-- reducer: "ADD_CONTACT"
-- 
-
+```
+dispatch({type:"ADD_CONTACT", payload:{id, name, phoneNumber, memo, profileImg}});
+```
+- action: `ADD_CONTACT`
+- payload: `id`, `name`, `phoneNumber`, `memo`, `profileImg`
+- 아이디는 삭제 기능을 구현하기 위해 타임스탬프를 통해 고유값을 부여합니다.
+- 이름과 전화번호는 반드시 입력되어야 하는 필수값이며, 메모는 선택사항입니다.
+- 프로필사진은 디폴트 이미지가 설정되어 있으며, 유저가 직접 지정할 수도 있습니다.
+- 따라서 필수값 입력 여부로 유효성을 검사한 뒤 액션을 디스패치합니다.
 
 ### 2) 연락처 조회
 
