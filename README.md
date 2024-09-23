@@ -77,11 +77,12 @@ dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
 - 이와 같은 안내 문구를 통해 사용자가 입력 과정에서 발생할 수 있는 혼란을 줄입니다.
 - 일련의 과정에서 명확한 피드백을 제공하여 더 나은 사용자 경험을 제공합니다.
 
-## 📍리덕스 컨셉
+## 📍리덕스(Redux)
 ![Redux1](https://github.com/user-attachments/assets/a1575b95-084f-4431-a12e-7c0a7bf7c147)
 - 리덕스를 사용하기 전은 부모 컴포넌트가 자식 컴포넌트에게 상태를 전달하는 단방향 소통만 가능했습니다.
 - 하지만 리덕스를 사용하면 `store`에서 상태를 중앙집중적으로 관리하기 때문에 양방향 소통이 가능해집니다.
-- 각각의 컴포넌트들이 상태를 요청하(액션을 디스패치)면 리덕스가 전달해줍니다.
+- 즉 리덕스를 사용하면 자식이 부모에게, 혹은 자식 컴포넌트 간에도 상태를 공유할 수 있습니다.
+- 각각의 컴포넌트들이 상태를 요청하면(액션을 디스패치) 리덕스가 전달해줍니다.
 - 단, 컴포넌트에서 상태를 직접적으로 요청할 수는 없습니다.
 ![Redux2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdKSDm4%2FbtsI06pfbTM%2FlwpYgCs0ahOavdCQkMVDy0%2Fimg.png)
 - `dispatch`로 `action`을 `reducer`에 보내고 함수가 호출된 이후 `store`에 상태가 저장되면 그 상태를 컴포넌트에 useSelector를 통해 가져오는 과정을 거쳐야 합니다.
