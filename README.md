@@ -24,7 +24,8 @@
 ## 📍컴포넌트 구성
 
 ## 📍상세기능
-### 1) 연락처 추가
+### 1) 기본기능
+#### 1-1) 연락처 추가
 ```
 dispatch({type:"ADD_CONTACT", payload:{id, name, phoneNumber, memo, profileImg}});
 ```
@@ -35,7 +36,7 @@ dispatch({type:"ADD_CONTACT", payload:{id, name, phoneNumber, memo, profileImg}}
 - 프로필사진은 디폴트 이미지가 설정되어 있으며, 유저가 직접 지정할 수도 있습니다.
 - 따라서 필수값 입력 여부로 유효성을 검사한 뒤 액션을 디스패치합니다.
 
-### 2) 연락처 조회
+#### 1-2) 연락처 조회
 ```
 const filteredList = useSelector(state => state.filteredList);
 ```
@@ -43,7 +44,7 @@ const filteredList = useSelector(state => state.filteredList);
 - 이중 `filteredList`를 컴포넌트에 렌더링하기 위해 `useSelector`로 가져옵니다.
 - 이를 `map` 함수를 이용하여 자식 컴포넌트로 렌더링되도록 합니다.
 
-### 3) 연락처 삭제
+#### 1-3) 연락처 삭제
 ```
 dispatch({type:"DELETE_CONTACT", payload:{id:item.id}});
 ```
@@ -51,10 +52,30 @@ dispatch({type:"DELETE_CONTACT", payload:{id:item.id}});
 - 리듀서에서는 `contactList`와 `filteredList`에 동일한 작업이 이루어집니다.
 - 해당 `id`가 있는 연락처를 제외한 배열을 가지는 것입니다.
 
-### 4) 검색
+#### 1-4) 검색
 ```
 dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
 ```
 - 연락처를 이름으로 검색할 수 있습니다.
 - `keyword`를 리듀서로 보내고 이 `keyword`가 들어가는 연락처를 필터링합니다.
 - 리듀서에서는 이 `filteredList`, `keyword`를 스토어에 저장합니다.
+
+### 2) 안내문구로 UX 개선
+#### 2-1) 연락처 추가: 유효성 검사
+```
+{showNameMsg && (<div className="msg-desc">이름: 필수 정보입니다.</div>)}
+{showPhoneMsg && (<div className="msg-desc">휴대전화번호: 필수 정보입니다.</div>)}
+```
+- 연락처 정보 중에는 이름과 전화번호가 필수값입니다.
+- 이 필수값이 비어있는 경우 어떤 값이 입력되지 않았는지 유저에게 알려야 합니다.
+
+#### 2-2) 검색: 키워드와 결과에 따른 안내
+```
+{noKeyword && (<div className="search-msg">키워드가 입력되지 않았습니다.</div>)}
+{noMatched && (<div className="search-msg">검색 결과가 없습니다.</div>)}
+```
+- 키워드가 없는 경우 경고문구를 표시하여 유저에게 필요한 동작을 정확히 전달합니다.
+- 키워드는 있지만 키워드와 일치하는 연락처가 없는 경우 경고문구를 표시하여 현재 상황을 구체적으로 알립니다.
+
+#### 2-3) 작업목적
+이와 같은 안내 문구를 통해 사용자가 입력 과정에서 발생할 수 있는 혼란을 줄이고, 검색 과정에서 명확한 피드백을 제공하여 더 나은 사용자 경험을 제공합니다.
