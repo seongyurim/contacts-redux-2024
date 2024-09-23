@@ -56,7 +56,7 @@ dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
 - `keyword`를 리듀서로 보내고 이 `keyword`가 들어가는 연락처를 필터링합니다.
 - 리듀서에서는 이 `filteredList`, `keyword`를 스토어에 저장합니다.
 
-### 2) 안내 메세지로 사용자 경험 개선
+### 2) 사용자 경험 개선
 #### 2-1) 연락처 추가: 유효성 검사
 ```
 {showNameMsg && (<div className="msg-desc">이름: 필수 정보입니다.</div>)}
