@@ -15,6 +15,9 @@
 	<img src="https://img.shields.io/badge/API Call-E3695F?style=for-the-badge&logoColor=white"> 
 </div>
 
+## 📍데모 페이지
+<img width="1325" alt="Contacts Demo" src="https://github.com/user-attachments/assets/bb4a4ee6-c88c-4216-b475-ba9f8392b6a1">
+
 ## 📍주요기능
 - **리덕스 기반 상태 관리**: 상태 관리의 일관성을 유지하고 데이터를 효율적으로 공유합니다.
 - **연락처 추가**: 사용자가 새로운 연락처를 등록할 수 있으며, 입력된 정보는 실시간으로 저장됩니다.
