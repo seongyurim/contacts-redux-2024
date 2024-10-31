@@ -30,7 +30,7 @@
 ## 📍상세기능
 ### 1) 기본기능
 #### 1-1) 연락처 추가
-```
+```javascript
 dispatch({type:"ADD_CONTACT", payload:{id, name, phoneNumber, memo, profileImg}});
 ```
 - action: `ADD_CONTACT`
@@ -41,7 +41,7 @@ dispatch({type:"ADD_CONTACT", payload:{id, name, phoneNumber, memo, profileImg}}
 - 따라서 필수값 입력 여부로 유효성을 검사한 뒤 액션을 디스패치합니다.
 
 #### 1-2) 연락처 조회
-```
+```javascript
 const filteredList = useSelector(state => state.filteredList);
 ```
 - 스토어가 가지고 있는 상태: `contactList`, `filteredList`, `keyword`
@@ -49,7 +49,7 @@ const filteredList = useSelector(state => state.filteredList);
 - 이를 `map` 함수를 이용하여 자식 컴포넌트로 렌더링되도록 합니다.
 
 #### 1-3) 연락처 삭제
-```
+```javascript
 dispatch({type:"DELETE_CONTACT", payload:{id:item.id}});
 ```
 - 특정 연락처를 삭제하기 위해 `id`를 리듀서로 보내야 합니다.
@@ -57,7 +57,7 @@ dispatch({type:"DELETE_CONTACT", payload:{id:item.id}});
 - 해당 `id`가 있는 연락처를 제외한 배열을 가지는 것입니다.
 
 #### 1-4) 검색
-```
+```javascript
 dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
 ```
 - 연락처를 이름으로 검색할 수 있습니다.
@@ -66,7 +66,7 @@ dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
 
 ### 2) 사용자 경험 개선
 #### 2-1) 연락처 추가: 유효성 검사
-```
+```javascript
 {showNameMsg && (<div className="msg-desc">이름: 필수 정보입니다.</div>)}
 {showPhoneMsg && (<div className="msg-desc">휴대전화번호: 필수 정보입니다.</div>)}
 ```
@@ -74,7 +74,7 @@ dispatch({type:"SEARCH_BY_NAME", payload:{keyword}});
 - 이 필수값이 비어있는 경우 어떤 값이 입력되지 않았는지 유저에게 알려야 합니다.
 
 #### 2-2) 검색: 키워드와 결과에 따른 안내
-```
+```javascript
 {noKeyword && (<div className="search-msg">키워드가 입력되지 않았습니다.</div>)}
 {noMatched && (<div className="search-msg">검색 결과가 없습니다.</div>)}
 ```
